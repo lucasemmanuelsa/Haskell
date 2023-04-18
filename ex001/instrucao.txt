@@ -1,0 +1,6 @@
+Escreva um program que recebe um inteiro e retorna seu dobro
+
+Exemplo:
+
+Entrada: 2
+Saída: 4
