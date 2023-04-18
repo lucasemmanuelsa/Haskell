@@ -1,0 +1,2 @@
+• Faça uma função que recebe um numero e
+retorna verdadeiro se o numero for par.

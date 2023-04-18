@@ -1,0 +1,14 @@
+• Uma empresa decidiu dar a seus funcionários um
+abono de salario, baseando-se nos pontos obtidos
+durante o mês, de acordo com a tabela:
+
+pontos obtidos | premio em R$
+1 a 10                100.00
+11 a 20               200.00
+21 a 30               300.00
+31 a 40               400.00
+A partir de 41        500
+
+• Faça um programa que, dado o número de pontos
+alcançado pelo funcionário, indique qual foi seu
+prêmio
