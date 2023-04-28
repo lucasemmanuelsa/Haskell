@@ -29,6 +29,6 @@ executable exCsv
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
-    build-depends:    base ^>=4.16.4.0, haskell-say ^>=1.0.0.0, csv
+    build-depends:    base ^>=4.16.4.0, haskell-say ^>=1.0.0.0, csv, bytestring >= 0.10.10.0 && < 0.12, vector >= 0.12.1.2 && < 0.14, cassava >= 0.5.2.0 && < 0.6, directory, split
     hs-source-dirs:   app
     default-language: Haskell2010
