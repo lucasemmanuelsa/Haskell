@@ -9,6 +9,7 @@ import System.IO.Unsafe
 import System.IO
 import System.Directory
 
+
 data User = User { 
  name :: String,
  email :: String,
@@ -33,7 +34,8 @@ main = do
     print(show user1)
     saveUserCSV "Test.csv" recebename recebeemail recebesenha recebelista
 
-    getUserCsv "Lucas@gmail.com"
+    tiboca <- getUserCsv "Lucas@gmail.com"
+    --print (name (tiboca !!0))
 
 registerUser :: String -> String -> String -> [String] -> User
 registerUser name email senha lista = User name email senha lista
@@ -48,17 +50,15 @@ saveUserCSV csvFilePath name email senha lista = do
 userToCSV :: String -> String -> String -> [String] -> String
 userToCSV name email senha lista = name ++ ";" ++ email ++ ";" ++ senha ++ ";" ++ show lista ++ "\n"
 
-getUserCsv :: String -> IO()
-getUserCsv email = do
+getUserCsv :: String -> IO [User]
+getUserCsv em = do
     let fileName = "Test.csv"
     csvData <- readFile fileName
     let lines = wordsWhen (=='\n') csvData
-    print lines
-    --let userList = map (\s -> wordsWhen (== ';') s) lines
-    --print userList
     let temp = map (\s -> wordsWhen (== ';') s) lines
     let userList = map (\[n, e, s, l] -> registerUser n e s (parseStrToList l)) temp
-    print userList
+    let jet = filter (\u -> email(u) == em) userList
+    return jet
 
 parseStrToList :: String -> [String]
 parseStrToList str = do
